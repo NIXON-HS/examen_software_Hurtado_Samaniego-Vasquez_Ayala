@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using System.Text;
+using examen_software_Hurtado_Samaniego_Vasquez_Ayala.Contracts;
+using examen_software_Hurtado_Samaniego_Vasquez_Ayala.Data;
+using examen_software_Hurtado_Samaniego_Vasquez_Ayala.Notifications;
+using examen_software_Hurtado_Samaniego_Vasquez_Ayala.PaymentMethods;
+using examen_software_Hurtado_Samaniego_Vasquez_Ayala.Services;
+
+namespace examen_software_Hurtado_Samaniego_Vasquez_Ayala;
+
+internal static class Program
+{
+    
+}

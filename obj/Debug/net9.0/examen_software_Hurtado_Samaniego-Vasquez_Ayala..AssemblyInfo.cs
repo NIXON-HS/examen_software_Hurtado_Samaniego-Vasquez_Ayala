@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("examen_software_Hurtado_Samaniego-Vasquez_Ayala.")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9174c3d342b29657f0ce02125419312f3561b221")]
 [assembly: System.Reflection.AssemblyProductAttribute("examen_software_Hurtado_Samaniego-Vasquez_Ayala.")]
 [assembly: System.Reflection.AssemblyTitleAttribute("examen_software_Hurtado_Samaniego-Vasquez_Ayala.")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
