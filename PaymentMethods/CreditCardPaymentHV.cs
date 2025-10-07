@@ -7,51 +7,51 @@ namespace examen_software_Hurtado_Samaniego_Vasquez_Ayala.PaymentMethods
     /// <summary>
     /// Implementación de pago con tarjeta de crédito siguiendo OCP/LSP.
     /// </summary>
-    public class CreditCardPaymentHV : IPaymentMethod_HV
+    public class CreditCardPaymentHV : IPaymentMethod
     {
         private const decimal MaxAmountAllowed_HV = 5000m;
 
         /// <summary>
         /// Nombre auto descriptivo expuesto a los clientes.
         /// </summary>
-        public string PaymentMethodName_HV => "Tarjeta de Crédito";
+        public string PaymentMethodName => "Tarjeta de Crédito";
 
         /// <summary>
         /// Valida que el monto sea positivo y no supere el límite permitido.
         /// </summary>
-        /// <param name="amount_HV">Monto a procesar.</param>
+        /// <param name="amount">Monto a procesar.</param>
         /// <returns>True si el monto es válido.</returns>
-        public bool ValidateAmount_HV(decimal amount_HV)
+        public bool ValidateAmount(decimal amount)
         {
-            return amount_HV > 0 && amount_HV <= MaxAmountAllowed_HV;
+            return amount > 0 && amount <= MaxAmountAllowed_HV;
         }
 
         /// <summary>
         /// Procesa el pago simulando la autorización de la tarjeta.
         /// </summary>
-        /// <param name="amount_HV">Monto a procesar.</param>
+        /// <param name="Amount">Monto a procesar.</param>
         /// <returns>Resultado del pago con mensaje y transacción.</returns>
-        public PaymentResult_HV ProcessPayment_HV(decimal amount_HV)
+        public PaymentResult_HV ProcessPayment_HV(decimal amount)
         {
-            if (!ValidateAmount_HV(amount_HV))
+            if (!ValidateAmount(amount))
             {
                 return new PaymentResult_HV
                 {
-                    IsSuccessful_HV = false,
-                    Message_HV = "Monto inválido para tarjeta de crédito.",
-                    Amount_HV = amount_HV,
-                    PaymentMethod_HV = PaymentMethodName_HV
+                    IsSuccessful = false,
+                    Message = "Monto inválido para tarjeta de crédito.",
+                    Amount = amount,
+                    PaymentMethod = PaymentMethodName
                 };
             }
 
             // Se simula la autorización del banco emisor.
             return new PaymentResult_HV
             {
-                IsSuccessful_HV = true,
-                Message_HV = "Pago autorizado por la tarjeta de crédito.",
-                TransactionId_HV = Guid.NewGuid().ToString("N"),
-                Amount_HV = amount_HV,
-                PaymentMethod_HV = PaymentMethodName_HV
+                IsSuccessful = true,
+                Message = "Pago autorizado por la tarjeta de crédito.",
+                TransactionId = Guid.NewGuid().ToString("N"),
+                Amount = amount,
+                PaymentMethod = PaymentMethodName
             };
         }
     }

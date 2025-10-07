@@ -7,37 +7,37 @@ namespace examen_software_Hurtado_Samaniego_Vasquez_Ayala.NotificationChannels
     /// <summary>
     /// SRP: Envía notificaciones simuladas por WhatsApp.
     /// </summary>
-    public class WhatsAppNotificationChannelHV : INotificationChannel_HV, IRecipientNotification_HV, IRecipientDestination_HV
+    public class WhatsAppNotificationChannelHV : INotificationChannel, IRecipientNotification, IRecipientDestination
     {
-        public string ChannelName_HV => "WhatsApp";
+        public string ChannelName => "WhatsApp";
 
-        public NotificationResult_HV SendNotification_HV(string message_HV)
+        public NotificationResult_HV SendNotification_HV(string Message)
         {
-            return CreateResult_HV(message_HV, "sin-destino");
+            return CreateResult_HV(Message, "sin-destino");
         }
 
-        public NotificationResult_HV SendToRecipient_HV(string message_HV, string recipient_HV)
+        public NotificationResult_HV SendToRecipient_HV(string message, string recipient)
         {
-            return CreateResult_HV(message_HV, recipient_HV);
+            return CreateResult_HV(message, recipient);
         }
 
-        public string ExtractDestination_HV(RecipientInfo_HV recipient_HV)
+        public string ExtractDestination_HV(RecipientInfo_HV Recipient)
         {
-            return recipient_HV == null ? string.Empty : recipient_HV.WhatsappNumber_HV;
+            return Recipient == null ? string.Empty : Recipient.WhatsappNumber;
         }
 
-        private NotificationResult_HV CreateResult_HV(string message_HV, string recipient_HV)
+        private NotificationResult_HV CreateResult_HV(string Message, string Recipient)
         {
-            var normalizedRecipient_HV = string.IsNullOrWhiteSpace(recipient_HV) ? "sin-whatsapp" : recipient_HV;
+            var normalizedRecipient = string.IsNullOrWhiteSpace(Recipient) ? "sin-whatsapp" : Recipient;
 
             return new NotificationResult_HV
             {
-                IsSuccessful_HV = !string.IsNullOrWhiteSpace(recipient_HV),
-                Message_HV = string.IsNullOrWhiteSpace(recipient_HV)
+                IsSuccessful = !string.IsNullOrWhiteSpace(Recipient),
+                Message = string.IsNullOrWhiteSpace(Recipient)
                     ? "No se pudo enviar WhatsApp: número vacío."
                     : "Mensaje de WhatsApp enviado correctamente.",
-                Channel_HV = ChannelName_HV + " -> " + normalizedRecipient_HV,
-                SentAt_HV = DateTime.Now
+                Channel = ChannelName + " -> " + normalizedRecipient,
+                SentAt = DateTime.Now
             };
         }
     }
