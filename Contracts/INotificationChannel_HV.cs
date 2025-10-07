@@ -11,7 +11,7 @@ namespace examen_software_Hurtado_Samaniego_Vasquez_Ayala.Contracts
         /// Envía notificación básica
         /// </summary>
         NotificationResult_HV SendNotification_HV(string message_HV);
-        
+
         /// <summary>
         /// Nombre del canal
         /// </summary>
