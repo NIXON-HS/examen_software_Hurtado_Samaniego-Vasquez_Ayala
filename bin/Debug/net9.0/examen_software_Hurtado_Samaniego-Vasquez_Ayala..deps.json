@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "examen_software_Hurtado_Samaniego-Vasquez_Ayala./1.0.0": {
+        "runtime": {
+          "examen_software_Hurtado_Samaniego-Vasquez_Ayala..dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "examen_software_Hurtado_Samaniego-Vasquez_Ayala./1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
